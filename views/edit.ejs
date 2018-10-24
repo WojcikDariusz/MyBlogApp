@@ -1,0 +1,34 @@
+<% include partials/header.ejs %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">
+        <span>Edytuj post</span>
+    </div>
+    
+
+<form action="/blogs/<%= blog._id %>?_method=PUT" method="POST" class="ui form">
+    
+    <div class="field">
+        <label for="blog[title]">Tytuł</label>
+        <input type="text" name="blog[title]" placeholder="Title" value="<%= blog.title %>"> 
+    </div>
+    
+     <div class="field">
+        <label for="blog[image]">URL zdjęcia</label>
+        <input type="text" name="blog[image]" placeholder="Image URL" value="<%= blog.image %>"> 
+    </div>
+    <div class="field">
+        <label for="blog[body]">Treść</label>
+        <textarea type="text" name="blog[body]" class="block" placeholder="Treść postu..." required><%= blog.body %></textarea>
+    </div>
+
+    <input class="ui button primary" type="submit" value="Wyślij formularz">
+     
+</form>
+
+</div>
+
+<% include partials/footer.ejs %>
+
+
+<!--method_overrride-->

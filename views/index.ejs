@@ -1,0 +1,19 @@
+<% include partials/header.ejs %>
+<div class="ui container segment main center text">
+        <div class="ui huge header"> <h1 class="ui text center"> </h1></div>
+    <div class="container center">
+        <% blog.forEach(function(blog){ %>
+        <div class="post">
+        <h2><strong> <%= blog.title %> </strong></h2>
+        <img src=" <%= blog.image %> " class="thumbnails">
+        <p> Data Dodania: <%=  blog.created.toDateString() %></p>
+        <p></p><%= blog.body %></p>
+         
+        <a href="/blogs/<%= blog._id %>" class="ui teal basic button">Zobacz więcej</a>
+        </div>
+        <% }); %>
+        
+        
+    </div>
+</div>
+<% include partials/footer.ejs %>
